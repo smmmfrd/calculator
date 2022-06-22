@@ -1,6 +1,9 @@
 const currentInput = document.querySelector('#current-input');
 const inputHistory = document.querySelector('#input-history');
 
+var storedInput = '';
+var currentOperand = '';
+
 function InputPressed(input){
     if(input.match(/\d/)){
         NumberPressed(input);
@@ -35,11 +38,22 @@ function EqualsPressed(){
 }
 
 function OperandPressed(operand){
-    console.log(`Pressed: ${operand}`);
-    inputHistory.textContent = operand;
+    let current = currentInput.textContent;
+    if(current == '0') return;
+
+    if(storedInput == '') {
+        storedInput = current;
+        currentInput.textContent = '0';
+    }
+
+    currentOperand = operand;
+
+    inputHistory.textContent = `${storedInput} ${currentOperand}`;
 }
 
 function ClearPressed(){
+    storedInput = currentOperand = '';
+
     currentInput.textContent = '0';
     inputHistory.textContent = '\xa0';
 }
