@@ -1,3 +1,31 @@
+const currentInput = document.querySelector('#current-input');
+
 function InputPressed(input){
-    console.log(input);
+    if(input.match(/\d/)){
+        NumberPressed(input);
+    } else {
+        console.log('it\'s something else');
+        if(input == 'C'){
+            ClearPressed();
+        }
+    }
+
+}
+
+function NumberPressed(number){
+    let current = currentInput.textContent;
+
+    if(current == '0'){
+        current = number;
+    } else if(current.length == 8){
+        current = current.slice(1) + number;
+    } else {
+        current += number;
+    }
+
+    currentInput.textContent = current;
+}
+
+function ClearPressed(){
+    currentInput.textContent = '0';
 }
