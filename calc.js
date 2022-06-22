@@ -33,10 +33,6 @@ function NumberPressed(number){
     currentInput.textContent = current;
 }
 
-function EqualsPressed(){
-    console.log('need to solve!');
-}
-
 function OperandPressed(operand){
     let current = currentInput.textContent;
     if(current == '0') return;
@@ -56,4 +52,37 @@ function ClearPressed(){
 
     currentInput.textContent = '0';
     inputHistory.textContent = '\xa0';
+}
+
+function EqualsPressed(){
+    let current = currentInput.textContent;
+    let a = Number(storedInput);
+    let b = Number(current);
+
+    if(currentOperand === '+') {
+        currentInput.textContent = add(a,b);
+    } else if(currentOperand === '-') {
+        currentInput.textContent = subtract(a,b);
+    } else if(currentOperand === '*') {
+        currentInput.textContent = multiply(a,b);
+    } else if(currentOperand === '/') {
+        currentInput.textContent = divide(a,b);
+    }
+
+    storedInput = currentOperand = '';
+
+    inputHistory.textContent = '\xa0';
+}
+
+function add(a,b){
+    return a + b;
+}
+function subtract(a,b){
+    return a - b;
+}
+function multiply(a,b){
+    return a * b;
+}
+function divide(a,b){
+    return a / b;
 }
