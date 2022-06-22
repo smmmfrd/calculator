@@ -44,7 +44,7 @@ function OperandPressed(operand){
 
         storedInput = currentInput.textContent;
     }
-    
+
     currentInput.textContent = '0';
 
     currentOperand = operand;
@@ -60,18 +60,28 @@ function ClearPressed(){
 }
 
 function EqualsPressed(){
+    if(storedInput === '') return;
+
     let a = Number(storedInput);
     let b = Number(currentInput.textContent);
 
+    let current = '';
+
     if(currentOperand === '+') {
-        currentInput.textContent = add(a,b);
+        current = add(a,b);
     } else if(currentOperand === '-') {
-        currentInput.textContent = subtract(a,b);
+        current = subtract(a,b);
     } else if(currentOperand === '*') {
-        currentInput.textContent = multiply(a,b);
+        current = multiply(a,b);
     } else if(currentOperand === '/') {
-        currentInput.textContent = divide(a,b);
+        current = divide(a,b);
     }
+    
+    current = current.toString();
+    if(current.length > 8){
+        current = current.slice(0, 8);
+    }
+    currentInput.textContent = current;
 
     storedInput = currentOperand = '';
 
