@@ -55,9 +55,8 @@ function ClearPressed(){
 }
 
 function EqualsPressed(){
-    let current = currentInput.textContent;
     let a = Number(storedInput);
-    let b = Number(current);
+    let b = Number(currentInput.textContent);
 
     if(currentOperand === '+') {
         currentInput.textContent = add(a,b);
