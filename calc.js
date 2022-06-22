@@ -1,12 +1,16 @@
 const currentInput = document.querySelector('#current-input');
+const inputHistory = document.querySelector('#input-history');
 
 function InputPressed(input){
     if(input.match(/\d/)){
         NumberPressed(input);
     } else {
-        console.log('it\'s something else');
         if(input == 'C'){
             ClearPressed();
+        } else if(input == '='){
+            EqualsPressed();
+        } else {
+            OperandPressed(input);
         }
     }
 
@@ -26,6 +30,16 @@ function NumberPressed(number){
     currentInput.textContent = current;
 }
 
+function EqualsPressed(){
+    console.log('need to solve!');
+}
+
+function OperandPressed(operand){
+    console.log(`Pressed: ${operand}`);
+    inputHistory.textContent = operand;
+}
+
 function ClearPressed(){
     currentInput.textContent = '0';
+    inputHistory.textContent = '\xa0';
 }
