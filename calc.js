@@ -39,8 +39,13 @@ function OperandPressed(operand){
 
     if(storedInput == '') {
         storedInput = current;
-        currentInput.textContent = '0';
+    } else {
+        EqualsPressed();
+
+        storedInput = currentInput.textContent;
     }
+    
+    currentInput.textContent = '0';
 
     currentOperand = operand;
 
