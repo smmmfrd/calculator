@@ -35,6 +35,7 @@
 
 #input-history{
     font-size: 32px;
+    user-select: none;
 }
 
 #current-input{
@@ -43,11 +44,13 @@
 
 /* INPUTS */
 #input-holder{
+    user-select: none;
+    margin-top: 30px;
     width: 100%;
     height: 100%;
 
     display: flex;
-    /* flex-direction: column; */
+    align-content: flex-start;
     flex-wrap: wrap;
     gap: 5px;
 }
