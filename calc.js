@@ -74,7 +74,13 @@ function EqualsPressed(){
     } else if(currentOperand === '*') {
         current = multiply(a,b);
     } else if(currentOperand === '/') {
-        current = divide(a,b);
+        if(b === 0){
+            ClearPressed();
+            inputHistory.textContent = 'nice try bucko';
+            return;
+        } else {
+            current = divide(a,b);
+        }
     }
     
     current = current.toString();
