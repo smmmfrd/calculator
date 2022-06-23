@@ -17,59 +17,59 @@
             </div>
             <div id="input-holder">
 
-                <div class="input-button big-button operand-button" onclick="InputPressed('D')">
+                <div class="input-button big-button operand-button" onclick="InputPressed('D')" data-key="8">
                     D
                 </div>
                 <div class="input-button big-button operand-button" onclick="InputPressed('C')">
                     C
                 </div>
 
-                <div class="input-button" onclick="InputPressed('1')">
+                <div class="input-button" onclick="InputPressed('1')" data-key="97">
                     1
                 </div>
-                <div class="input-button" onclick="InputPressed('2')">
+                <div class="input-button" onclick="InputPressed('2')" data-key="98">
                     2
                 </div>
-                <div class="input-button" onclick="InputPressed('3')">
+                <div class="input-button" onclick="InputPressed('3')" data-key="99">
                     3
                 </div>
-                <div class="input-button operand-button" onclick="InputPressed('+')">
+                <div class="input-button operand-button" onclick="InputPressed('+')" data-key="107">
                     +
                 </div>
 
-                <div class="input-button" onclick="InputPressed('4')">
+                <div class="input-button" onclick="InputPressed('4')" data-key="100">
                     4
                 </div>
-                <div class="input-button" onclick="InputPressed('5')">
+                <div class="input-button" onclick="InputPressed('5')" data-key="101">
                     5
                 </div>
-                <div class="input-button" onclick="InputPressed('6')">
+                <div class="input-button" onclick="InputPressed('6')" data-key="102">
                     6
                 </div>
-                <div class="input-button operand-button" onclick="InputPressed('-')">
+                <div class="input-button operand-button" onclick="InputPressed('-')" data-key="109">
                     -
                 </div>
 
-                <div class="input-button" onclick="InputPressed('7')">
+                <div class="input-button" onclick="InputPressed('7')" data-key="103">
                     7
                 </div>
-                <div class="input-button" onclick="InputPressed('8')">
+                <div class="input-button" onclick="InputPressed('8')" data-key="104">
                     8
                 </div>
-                <div class="input-button" onclick="InputPressed('9')">
+                <div class="input-button" onclick="InputPressed('9')" data-key="105">
                     9
                 </div>
-                <div class="input-button operand-button" onclick="InputPressed('*')">
+                <div class="input-button operand-button" onclick="InputPressed('*')" data-key="106">
                     *
                 </div>
                 
-                <div class="input-button big-button" onclick="InputPressed('0')">
+                <div class="input-button big-button" onclick="InputPressed('0')" data-key="96">
                     0
                 </div>
-                <div class="input-button operand-button" onclick="InputPressed('=')">
+                <div class="input-button operand-button" onclick="InputPressed('=')" data-key="13">
                     =
                 </div>
-                <div class="input-button operand-button" onclick="InputPressed('/')">
+                <div class="input-button operand-button" onclick="InputPressed('/')" data-key="111">
                     /
                 </div>
             </div>
@@ -78,75 +78,11 @@
 
     <script>
         window.addEventListener('keydown', function(e){
-
-            switch(e.keyCode){
-                case 96:
-                    // 0
-                    InputPressed('0');
-                    break;
-                case 97:
-                    // 1
-                    InputPressed('1');
-                    break;
-                case 98:
-                    // 2
-                    InputPressed('2');
-                    break;
-                case 99:
-                    // 3
-                    InputPressed('3');
-                    break;
-                case 100:
-                    // 4
-                    InputPressed('4');
-                    break;
-                case 101:
-                    // 5
-                    InputPressed('5');
-                    break;
-                case 102:
-                    // 6
-                    InputPressed('6');
-                    break;
-                case 103:
-                    // 7
-                    InputPressed('7');
-                    break;
-                case 104:
-                    // 8
-                    InputPressed('8');
-                    break;
-                case 105:
-                    // 9
-                    InputPressed('9');
-                    break;
-                case 13:
-                    // ENTER
-                    InputPressed('=');
-                    break;
-                case 107:
-                    // PLUS
-                    InputPressed('+');
-                    break;
-                case 109:
-                    // MINUS
-                    InputPressed('-');
-                    break;
-                case 106:
-                    // MULTIPLY
-                    InputPressed('*');
-                    break;
-                case 111:
-                    // DIVIDE
-                    InputPressed('/');
-                    break;
-                default:
-                    console.log('This is setup to only take numpad inputs.');
-                    break;
-            }
+            let key = document.querySelector(`.input-button[data-key="${e.keyCode}"]`)
+            key.onclick.apply();
         });
     </script>
-    
+
     <div class="footer">
         <h3>Copyright &copy; <a href="https://github.com/smmmfrd" target="_blank" rel="noopener noreferrer">smmmfrd</a>
         <br>

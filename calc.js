@@ -62,8 +62,6 @@ function ClearPressed(){
 }
 
 function DeletePressed(){
-    console.log('delete');
-
     let current = currentInput.textContent;
 
     if(current == '0'){
