@@ -12,7 +12,9 @@ function InputPressed(input){
             ClearPressed();
         } else if(input == '='){
             EqualsPressed();
-        } else {
+        } else if(input =='D'){
+            DeletePressed();
+        }else {
             OperandPressed(input);
         }
     }
@@ -57,6 +59,32 @@ function ClearPressed(){
 
     currentInput.textContent = '0';
     inputHistory.textContent = '\xa0';
+}
+
+function DeletePressed(){
+    console.log('delete');
+
+    let current = currentInput.textContent;
+
+    if(current == '0'){
+        if(currentOperand != ''){
+            currentOperand = '';
+            inputHistory.textContent = `${storedInput}\xa0\xa0`;
+        } else {
+            if(storedInput != ''){ 
+                current = storedInput;
+            } else {
+                current = '0';
+            }
+            storedInput = '';
+            inputHistory.textContent = '\xa0';
+        }
+    } else {
+        current = current.slice(0, current.length - 1);
+        if(current.length == 0) current = '0';
+    } 
+
+    currentInput.textContent = current;
 }
 
 function EqualsPressed(){
