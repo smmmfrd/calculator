@@ -68,8 +68,78 @@
                     /
                 </div>
             </div>
-
         </div>
     </div>
+
+    <script>
+        window.addEventListener('keydown', function(e){
+
+            switch(e.keyCode){
+                case 96:
+                    // 0
+                    InputPressed('0');
+                    break;
+                case 97:
+                    // 1
+                    InputPressed('1');
+                    break;
+                case 98:
+                    // 2
+                    InputPressed('2');
+                    break;
+                case 99:
+                    // 3
+                    InputPressed('3');
+                    break;
+                case 100:
+                    // 4
+                    InputPressed('4');
+                    break;
+                case 101:
+                    // 5
+                    InputPressed('5');
+                    break;
+                case 102:
+                    // 6
+                    InputPressed('6');
+                    break;
+                case 103:
+                    // 7
+                    InputPressed('7');
+                    break;
+                case 104:
+                    // 8
+                    InputPressed('8');
+                    break;
+                case 105:
+                    // 9
+                    InputPressed('9');
+                    break;
+                case 13:
+                    // ENTER
+                    InputPressed('=');
+                    break;
+                case 107:
+                    // PLUS
+                    InputPressed('+');
+                    break;
+                case 109:
+                    // MINUS
+                    InputPressed('-');
+                    break;
+                case 106:
+                    // MULTIPLY
+                    InputPressed('*');
+                    break;
+                case 111:
+                    // DIVIDE
+                    InputPressed('/');
+                    break;
+                default:
+                    alert('This is setup to only take numpad inputs.');
+                    break;
+            }
+        });
+    </script>
 </body>
 </html>
