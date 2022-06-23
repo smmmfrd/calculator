@@ -16,55 +16,60 @@
                 <div id="current-input">0</div>
             </div>
             <div id="input-holder">
-                <div id="input-button" onclick="InputPressed('1')">
+
+                <div class="input-button big-button operand-button" onclick="InputPressed('D')">
+                    D
+                </div>
+                <div class="input-button big-button operand-button" onclick="InputPressed('C')">
+                    C
+                </div>
+
+                <div class="input-button" onclick="InputPressed('1')">
                     1
                 </div>
-                <div id="input-button" onclick="InputPressed('2')">
+                <div class="input-button" onclick="InputPressed('2')">
                     2
                 </div>
-                <div id="input-button" onclick="InputPressed('3')">
+                <div class="input-button" onclick="InputPressed('3')">
                     3
                 </div>
-                <div id="input-button" onclick="InputPressed('+')">
+                <div class="input-button operand-button" onclick="InputPressed('+')">
                     +
                 </div>
 
-                <div id="input-button" onclick="InputPressed('4')">
+                <div class="input-button" onclick="InputPressed('4')">
                     4
                 </div>
-                <div id="input-button" onclick="InputPressed('5')">
+                <div class="input-button" onclick="InputPressed('5')">
                     5
                 </div>
-                <div id="input-button" onclick="InputPressed('6')">
+                <div class="input-button" onclick="InputPressed('6')">
                     6
                 </div>
-                <div id="input-button" onclick="InputPressed('-')">
+                <div class="input-button operand-button" onclick="InputPressed('-')">
                     -
                 </div>
 
-                <div id="input-button" onclick="InputPressed('7')">
+                <div class="input-button" onclick="InputPressed('7')">
                     7
                 </div>
-                <div id="input-button" onclick="InputPressed('8')">
+                <div class="input-button" onclick="InputPressed('8')">
                     8
                 </div>
-                <div id="input-button" onclick="InputPressed('9')">
+                <div class="input-button" onclick="InputPressed('9')">
                     9
                 </div>
-                <div id="input-button" onclick="InputPressed('*')">
+                <div class="input-button operand-button" onclick="InputPressed('*')">
                     *
                 </div>
                 
-                <div id="input-button" onclick="InputPressed('0')">
+                <div class="input-button big-button" onclick="InputPressed('0')">
                     0
                 </div>
-                <div id="input-button" onclick="InputPressed('C')">
-                    C
-                </div>
-                <div id="input-button" onclick="InputPressed('=')">
+                <div class="input-button operand-button" onclick="InputPressed('=')">
                     =
                 </div>
-                <div id="input-button" onclick="InputPressed('/')">
+                <div class="input-button operand-button" onclick="InputPressed('/')">
                     /
                 </div>
             </div>
@@ -136,7 +141,7 @@
                     InputPressed('/');
                     break;
                 default:
-                    alert('This is setup to only take numpad inputs.');
+                    console.log('This is setup to only take numpad inputs.');
                     break;
             }
         });

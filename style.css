@@ -1,3 +1,22 @@
+:root{
+    --background: rgb(12, 16, 44);
+    --calc-body: darkgrey;
+
+    --number-button: grey;
+    --number-button-text: white;
+
+    --operand-button: #cc8500;
+    --operand-button-text: white;
+    
+    --display-background: white;
+    --display-text: black;
+    font-family: monospace;
+}
+
+body{
+    background-color: var(--background);
+}
+
 #calc-holder{
     display: flex;
     margin-top: 32px;
@@ -5,10 +24,11 @@
 }
 
 #calculator{
+    background-color: var(--calc-body);
     flex: 0 0 auto;
     box-sizing: border-box;
     width: 400px;
-    height: 600px;
+    height: 675px;
     border: 2px solid black;
     border-radius: 12px;
     
@@ -21,9 +41,11 @@
 
 /* DISPLAY */
 #display{
+    background-color: var(--display-background);
+    color: var(--display-text);
     box-sizing: border-box;
     width: 375px;
-    height: 155px;
+    height: 130px;
     border: 2px solid black;
     border-radius: 12px;
 
@@ -34,34 +56,46 @@
 }
 
 #input-history{
-    font-size: 32px;
+    font-size: 24px;
     user-select: none;
 }
 
 #current-input{
-    font-size: 88px;
+    font-size: 72px;
 }
 
 /* INPUTS */
 #input-holder{
     user-select: none;
+    flex-grow: 4;
     margin-top: 30px;
-    width: 100%;
-    height: 100%;
+    width: 375px;
 
     display: flex;
-    align-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 10px;
 }
 
-#input-button{
+.input-button{
+    background-color: var(--number-button);
+    color: var(--number-button-text);
     box-sizing: border-box;
-    width: 90px;
-    height: 90px;
+    width: 85px;
+    height: 85px;
     border: 2px solid black;
     border-radius: 12px;
 
     text-align: center;
-    font-size: 80px;
+    font-size: 5.5rem;
+}
+
+.operand-button{
+    background-color: var(--operand-button);
+    color: var(--operand-button-text);
+}
+
+.big-button{
+    width: 180px;
 }
